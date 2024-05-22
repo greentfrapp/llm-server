@@ -1,6 +1,8 @@
 import torch
 import transformers
 
+from core.config import settings
+
 
 model_id = "meta-llama/Meta-Llama-3-8B-Instruct"
 
@@ -9,7 +11,7 @@ LLM = transformers.pipeline(
     model=model_id,
     model_kwargs={"torch_dtype": torch.bfloat16},
     device_map="auto",
-    token="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",
+    token=settings.HUGGING_FACE_TOKEN,
 )
 
 SYSTEM_PROMPT = "You are a helpful digital assistant. Please provide safe, ethical and accurate information to the user."
