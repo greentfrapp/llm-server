@@ -17,6 +17,8 @@ class Settings(BaseSettings):
             return v
         raise ValueError(v)
 
+    HUGGING_FACE_TOKEN: str = ""
+
     class Config:
         case_sensitive = True
         env_file = ".env"
