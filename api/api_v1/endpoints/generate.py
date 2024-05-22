@@ -15,7 +15,7 @@ def generate_post(payload: schemas.GenerateRequest):
         max_new_tokens=payload.max_new_tokens,
         history=payload.history,
         system_prompt=payload.system_prompt
-    )
+    )[0]["generated_text"]
     return {
         "result": result
     }
